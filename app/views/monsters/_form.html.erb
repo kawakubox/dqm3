@@ -28,7 +28,7 @@
 
   <div>
     <%= form.label :specific_skill, style: "display: block" %>
-    <%= form.number_field :specific_skill_id %>
+    <%= form.collection_select :specific_skill_id, SkillGroup.all, :id, :name %>
   </div>
 
   <div>
