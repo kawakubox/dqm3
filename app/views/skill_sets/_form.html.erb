@@ -1,0 +1,32 @@
+<%= form_with(model: skill_set) do |form| %>
+  <% if skill_set.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(skill_set.errors.count, "error") %> prohibited this skill_set from being saved:</h2>
+
+      <ul>
+        <% skill_set.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :skill_group_id, style: "display: block" %>
+    <%= form.text_field :skill_group_id %>
+  </div>
+
+  <div>
+    <%= form.label :skill_id, style: "display: block" %>
+    <%= form.text_field :skill_id %>
+  </div>
+
+  <div>
+    <%= form.label :point, style: "display: block" %>
+    <%= form.number_field :point %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

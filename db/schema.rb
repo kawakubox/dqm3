@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_09_175556) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_09_180455) do
   create_table "monster_growths", force: :cascade do |t|
     t.integer "monster_id", null: false
     t.integer "level", null: false
@@ -39,6 +39,16 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_09_175556) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "skill_sets", force: :cascade do |t|
+    t.integer "skill_group_id", null: false
+    t.integer "skill_id", null: false
+    t.integer "point", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["skill_group_id"], name: "index_skill_sets_on_skill_group_id"
+    t.index ["skill_id"], name: "index_skill_sets_on_skill_id"
+  end
+
   create_table "skills", force: :cascade do |t|
     t.string "name", limit: 20, null: false
     t.text "description"
@@ -47,4 +57,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_09_175556) do
   end
 
   add_foreign_key "monster_growths", "monsters"
+  add_foreign_key "skill_sets", "skill_groups"
+  add_foreign_key "skill_sets", "skills"
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :skill_sets
   resources :skills
   resources :skill_groups
   resources :monster_growths
