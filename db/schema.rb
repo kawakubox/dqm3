@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_09_134409) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_09_151638) do
+  create_table "monster_growths", force: :cascade do |t|
+    t.integer "monster_id", null: false
+    t.integer "level", null: false
+    t.integer "hp", null: false
+    t.integer "mp", null: false
+    t.integer "attack", null: false
+    t.integer "defence", null: false
+    t.integer "speed", null: false
+    t.integer "intelligence", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["monster_id"], name: "index_monster_growths_on_monster_id"
+  end
+
   create_table "monsters", force: :cascade do |t|
     t.string "name", limit: 10, null: false
     t.string "lineage", limit: 20, null: false
@@ -19,4 +33,5 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_09_134409) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "monster_growths", "monsters"
 end

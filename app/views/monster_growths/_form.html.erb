@@ -1,0 +1,57 @@
+<%= form_with(model: monster_growth) do |form| %>
+  <% if monster_growth.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(monster_growth.errors.count, "error") %> prohibited this monster_growth from being saved:</h2>
+
+      <ul>
+        <% monster_growth.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :monster_id, style: "display: block" %>
+    <%= form.text_field :monster_id %>
+  </div>
+
+  <div>
+    <%= form.label :level, style: "display: block" %>
+    <%= form.number_field :level %>
+  </div>
+
+  <div>
+    <%= form.label :hp, style: "display: block" %>
+    <%= form.number_field :hp %>
+  </div>
+
+  <div>
+    <%= form.label :mp, style: "display: block" %>
+    <%= form.number_field :mp %>
+  </div>
+
+  <div>
+    <%= form.label :attack, style: "display: block" %>
+    <%= form.number_field :attack %>
+  </div>
+
+  <div>
+    <%= form.label :defence, style: "display: block" %>
+    <%= form.number_field :defence %>
+  </div>
+
+  <div>
+    <%= form.label :speed, style: "display: block" %>
+    <%= form.number_field :speed %>
+  </div>
+
+  <div>
+    <%= form.label :intelligence, style: "display: block" %>
+    <%= form.number_field :intelligence %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
