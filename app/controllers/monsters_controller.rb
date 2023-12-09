@@ -65,6 +65,6 @@ class MonstersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def monster_params
-      params.require(:monster).permit(:name, :lineage, :rank)
+      params.require(:monster).permit(:name, :lineage, :rank, :specific_skill_id)
     end
 end
