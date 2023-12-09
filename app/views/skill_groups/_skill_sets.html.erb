@@ -1,0 +1,14 @@
+<div>
+  <table>
+    <tr>
+      <th>スキル</th>
+      <th>ポイント</th>
+    </tr>
+    <% skill_sets.each do |skill_set| %>
+      <tr>
+        <td><%= skill_set.skill.name %></td>
+        <td><%= skill_set.point %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

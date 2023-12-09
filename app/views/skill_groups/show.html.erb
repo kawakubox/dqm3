@@ -2,6 +2,8 @@
 
 <%= render @skill_group %>
 
+<%= render partial: 'skill_sets', locals: { skill_sets: @skill_group.skill_sets } %>
+
 <div>
   <%= link_to "Edit this skill group", edit_skill_group_path(@skill_group) %> |
   <%= link_to "Back to skill groups", skill_groups_path %>
