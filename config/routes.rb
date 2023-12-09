@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :level_up_patterns
   resources :characteristics
   resources :skill_sets
   resources :skills

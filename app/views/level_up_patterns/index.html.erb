@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Level up patterns</h1>
+
+<div id="level_up_patterns">
+  <% @level_up_patterns.each do |level_up_pattern| %>
+    <%= render level_up_pattern %>
+    <p>
+      <%= link_to "Show this level up pattern", level_up_pattern %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New level up pattern", new_level_up_pattern_path %>

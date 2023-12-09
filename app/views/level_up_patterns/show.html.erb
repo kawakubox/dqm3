@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @level_up_pattern %>
+
+<div>
+  <%= link_to "Edit this level up pattern", edit_level_up_pattern_path(@level_up_pattern) %> |
+  <%= link_to "Back to level up patterns", level_up_patterns_path %>
+
+  <%= button_to "Destroy this level up pattern", @level_up_pattern, method: :delete %>
+</div>
