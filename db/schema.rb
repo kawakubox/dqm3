@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_09_174310) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_09_175556) do
   create_table "monster_growths", force: :cascade do |t|
     t.integer "monster_id", null: false
     t.integer "level", null: false
@@ -35,6 +35,13 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_09_174310) do
 
   create_table "skill_groups", force: :cascade do |t|
     t.string "name", limit: 20, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string "name", limit: 20, null: false
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
