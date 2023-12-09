@@ -2,6 +2,8 @@
 
 <%= render @monster %>
 
+<%= render partial: 'growths', locals: { growths: @monster.growths } %>
+
 <div>
   <%= link_to "Edit this monster", edit_monster_path(@monster) %> |
   <%= link_to "Back to monsters", monsters_path %>
