@@ -32,6 +32,11 @@
   </div>
 
   <div>
+    <%= form.label :level_up_pattern, style: "display: block" %>
+    <%= form.collection_select :level_up_pattern_id, LevelUpPattern.all, :id, :name %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
