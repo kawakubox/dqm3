@@ -3,12 +3,38 @@
 <h1>Monsters</h1>
 
 <div id="monsters">
-  <% @monsters.each do |monster| %>
-    <%= render monster %>
-    <p>
-      <%= link_to "Show this monster", monster %>
-    </p>
-  <% end %>
+  <table>
+    <tr>
+      <th>種族名</th>
+      <th>系統</th>
+      <th>ランク</th>
+      <th>固有スキル</th>
+      <th>経験値テーブル</th>
+      <th></th>
+    </tr>
+    <% @monsters.each do |monster| %>
+      <tr>
+        <td>
+          <%= monster.name %>
+        </td>
+        <td>
+          <%= t(monster.lineage_translate_key) %>
+        </td>
+        <td>
+          <%= Monster.human_attribute_name(monster.rank) %>
+        </td>
+        <td>
+          <%= monster.specific_skill.name %>
+        </td>
+        <td>
+          <%= monster.level_up_pattern&.name %>
+        </td>
+        <td>
+          <%= link_to "Show this monster", monster %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 </div>
 
 <%= link_to "New monster", new_monster_path %>
