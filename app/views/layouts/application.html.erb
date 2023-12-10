@@ -11,6 +11,11 @@
   </head>
 
   <body>
+    <div>
+      <%= link_to '図鑑', monsters_path %>
+      <%= link_to '特性', characteristics_path %>
+      <%= link_to '経験値テーブル', level_up_patterns_path %>
+    <div>
     <%= yield %>
   </body>
 </html>
