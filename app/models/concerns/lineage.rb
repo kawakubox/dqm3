@@ -2,13 +2,13 @@ module Lineage
   extend ActiveSupport::Concern
 
   TYPES = {
-    slime: 'スライム',
-    dragon: 'ドラゴン',
-    nature: 'しぜん',
-    beast: 'けもの',
-    material: 'ぶっしつ',
-    deamon: 'あくま',
-    undead: 'しりょう'
+    slime: 'slime',
+    dragon: 'dragon',
+    nature: 'nature',
+    beast: 'beast',
+    material: 'material',
+    demon: 'demon',
+    undead: 'undead'
   }
 
   included do
@@ -18,6 +18,10 @@ module Lineage
   end
 
   def self.select_pairs
-    TYPES.map { |type| [type[1], type[0]] }
+    TYPES.map { |type| [I18n.t("lineage.#{type[1]}"), type[0]] }
+  end
+
+  def lineage_translate_key
+    "lineage.#{lineage}"
   end
 end
