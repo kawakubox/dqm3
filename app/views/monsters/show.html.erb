@@ -2,7 +2,7 @@
 
 <%= render @monster %>
 
-<%= render partial: 'growths', locals: { growths: @monster.growths } %>
+<%= render(GrowthTableComponent.new(monster: @monster)) %>
 
 <div>
   <%= link_to "Edit this monster", edit_monster_path(@monster) %> |
