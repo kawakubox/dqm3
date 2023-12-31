@@ -9,30 +9,6 @@
       <th>すばやさ</th>
       <th>かしこさ</th>
     </tr>
-    <% @monster_growths.each do |growth| %>
-      <tr>
-        <td>
-          <%= growth.level %>
-        </td>
-        <td>
-          <%= growth.hp %>
-        </td>
-        <td>
-          <%= growth.mp %>
-        </td>
-        <td>
-          <%= growth.attack %>
-        </td>
-        <td>
-          <%= growth.defence %>
-        </td>
-        <td>
-          <%= growth.speed %>
-        </td>
-        <td>
-          <%= growth.intelligence %>
-        </td>
-      </tr>
-    <% end %>
+    <%= render(GrowthTableRowComponent.with_collection(MonsterGrowth.table_items(monster: @monster, to: 30))) %>
   </table>
 </div>
