@@ -13,6 +13,8 @@ class MonsterGrowthsController < ApplicationController
   # GET /monster_growths/new
   def new
     @monster_growth = MonsterGrowth.new
+    @monster_growth.monster_id = params['monster_id'] if params['monster_id'].present?
+    @monster_growth.level = params['level'] if params['level'].present?
   end
 
   # GET /monster_growths/1/edit

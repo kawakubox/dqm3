@@ -13,12 +13,12 @@
 
   <div>
     <%= form.label :monster_id, style: "display: block" %>
-    <%= form.collection_select :monster_id, Monster.all, :id, :name %>
+    <%= form.collection_select :monster_id, Monster.all, :id, :name, { selected: monster_growth.monster_id } %>
   </div>
 
   <div>
     <%= form.label :level, style: "display: block" %>
-    <%= form.number_field :level %>
+    <%= form.number_field :level, value: monster_growth.level %>
   </div>
 
   <div>

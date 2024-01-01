@@ -20,4 +20,11 @@
   <td>
     <%= @monster_growth&.intelligence %>
   </td>
+  <td>
+    <% if @monster_growth.persisted? %>
+      <%= link_to 'edit', edit_monster_growth_path(monster_id: @monster_growth.monster_id) %>
+    <% else %>
+      <%= link_to 'new', new_monster_growth_path(monster_id: @monster_growth.monster_id, level: @level) %>
+    <% end %>
+  </td>
 </tr>
