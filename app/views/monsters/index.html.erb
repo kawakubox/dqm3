@@ -10,12 +10,11 @@
       <th>ランク</th>
       <th>固有スキル</th>
       <th>経験値テーブル</th>
-      <th></th>
     </tr>
     <% @monsters.each do |monster| %>
       <tr>
         <td>
-          <%= monster.name %>
+          <%= link_to monster.name, monster %>
         </td>
         <td>
           <%= t(monster.lineage_translate_key) %>
@@ -28,9 +27,6 @@
         </td>
         <td>
           <%= monster.level_up_pattern&.name %>
-        </td>
-        <td>
-          <%= link_to "Show this monster", monster %>
         </td>
       </tr>
     <% end %>
