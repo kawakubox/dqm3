@@ -1,15 +1,14 @@
 ja:
-  activerecord:
-    attributes:
-      monster/rank:
-        s: 'S'
-        a: 'A'
-        b: 'B'
-        c: 'C'
-        d: 'D'
-        e: 'E'
-        f: 'F'
-        g: 'G'
+  rank:
+    x: 'X'
+    s: 'S'
+    a: 'A'
+    b: 'B'
+    c: 'C'
+    d: 'D'
+    e: 'E'
+    f: 'F'
+    g: 'G'
   lineage:
     slime: 'スライム'
     dragon: 'ドラゴン'

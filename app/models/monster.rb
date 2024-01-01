@@ -1,7 +1,7 @@
 class Monster < ApplicationRecord
   include Lineage
 
-  enum :rank, { s: 's', a: 'a', b: 'b', c: 'c', d: 'd', e: 'e', f: 'f', g: 'g' }, prefix: true
+  enum :rank, { x: 'x', s: 's', a: 'a', b: 'b', c: 'c', d: 'd', e: 'e', f: 'f', g: 'g' }, prefix: true
 
   belongs_to :level_up_pattern
   belongs_to :specific_skill, class_name: 'SkillGroup'
