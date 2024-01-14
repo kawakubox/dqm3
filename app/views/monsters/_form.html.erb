@@ -28,12 +28,12 @@
 
   <div>
     <%= form.label :specific_skill, style: "display: block" %>
-    <%= form.collection_select :specific_skill_id, SkillGroup.all, :id, :name %>
+    <%= form.collection_select :specific_skill_id, SkillGroup.all, :id, :name, { include_blank: '----' } %>
   </div>
 
   <div>
     <%= form.label :level_up_pattern, style: "display: block" %>
-    <%= form.collection_select :level_up_pattern_id, LevelUpPattern.all, :id, :name %>
+    <%= form.collection_select :level_up_pattern_id, LevelUpPattern.all, :id, :name, { include_blank: '----' } %>
   </div>
 
   <div>

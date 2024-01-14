@@ -3,8 +3,8 @@ class Monster < ApplicationRecord
 
   enum :rank, { x: 'x', s: 's', a: 'a', b: 'b', c: 'c', d: 'd', e: 'e', f: 'f', g: 'g' }, prefix: true
 
-  belongs_to :level_up_pattern
-  belongs_to :specific_skill, class_name: 'SkillGroup'
+  belongs_to :level_up_pattern, optional: true
+  belongs_to :specific_skill, class_name: 'SkillGroup', optional: true
 
   has_many :monster_growths
 
@@ -12,7 +12,7 @@ class Monster < ApplicationRecord
 
   validates :name, presence: true
   validates :rank, presence: true
-  validate :validate_level_up_pattern
+  validate :validate_level_up_pattern, if: -> { level_up_pattern_id.present? }
 
   private
 

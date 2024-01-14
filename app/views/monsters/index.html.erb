@@ -23,7 +23,7 @@
           <%= Monster.human_attribute_name(monster.rank) %>
         </td>
         <td>
-          <%= monster.specific_skill.name %>
+          <%= monster.specific_skill&.name %>
         </td>
         <td>
           <%= monster.level_up_pattern&.name %>

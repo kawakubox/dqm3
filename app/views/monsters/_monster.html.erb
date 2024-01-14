@@ -16,11 +16,11 @@
 
   <p>
     <strong>SpecificSkill:</strong>
-    <%= link_to monster.specific_skill.name, monster.specific_skill %>
+    <%= link_to monster.specific_skill.name, monster.specific_skill if monster.specific_skill %>
   </p>
 
   <p>
     <strong>LevelUpPattern:</strong>
-    <%= link_to monster.level_up_pattern.name, monster.level_up_pattern %>
+    <%= link_to monster.level_up_pattern.name, monster.level_up_pattern if monster.level_up_pattern %>
   </p>
 </div>
